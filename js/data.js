@@ -228,7 +228,6 @@ for (el of data) {
     main.classList.add("main")
     main.classList.add("row")
 
-    display.classList.add("display")
     display.classList.add("item")
     display.classList.add("row")
     other_icons.classList.add("icons")
@@ -239,7 +238,6 @@ for (el of data) {
     display_span.innerHTML = el.specs.display.size
     display_descr.innerHTML = el.specs.display.title
 
-    chip.classList.add("chip")
     chip.classList.add("item")
     chip.classList.add("row")
 
@@ -247,7 +245,6 @@ for (el of data) {
     chip_title.innerHTML = el.specs.chip.title
     chip_descr.innerHTML = el.specs.chip.description
 
-    ram.classList.add("ram")
     ram.classList.add("item")
     ram.classList.add("row")
 
@@ -255,7 +252,6 @@ for (el of data) {
     ram_title.innerHTML = el.specs.ram.title
     ram_descr.innerHTML = el.specs.ram.description
 
-    memory.classList.add("memory")
     memory.classList.add("item")
     memory.classList.add("row")
 
@@ -264,14 +260,12 @@ for (el of data) {
     memory_title.style.fontWeight = `600`
     memory_title.style.fontSize = `26px`
 
-    battery.classList.add("battery")
     battery.classList.add("item")
     battery.classList.add("row")
 
     battery_img.src = "./img/battery.png"
     battery_title.innerHTML = `Up to ${el.specs.battery} hours battery life`
 
-    camera.classList.add("camera")
     camera.classList.add("item")
     camera.classList.add("row")
 
@@ -279,7 +273,6 @@ for (el of data) {
     camera_title.innerHTML = el.specs.camera.title
     camera_descr.innerHTML = el.specs.camera.description
 
-    weight.classList.add("weight")
     weight.classList.add("item")
     weight.classList.add("row")
 
@@ -290,7 +283,6 @@ for (el of data) {
     weight_title.style.fontSize = `26px`
 
 
-    other.classList.add("other")
     other.classList.add("item")
     other.classList.add("row")
 
