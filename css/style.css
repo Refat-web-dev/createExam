@@ -79,10 +79,11 @@ h6 {
 /*--------------------*/
 .wrapper {
   width: 90%;
-  margin: 30px 0;
+  margin: 30px auto;
   display: flex;
   gap: 150px;
   align-items: start;
+  background: #000;
   justify-content: center; }
 
 .column {
