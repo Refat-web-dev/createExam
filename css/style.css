@@ -87,7 +87,7 @@ h6 {
 
 .column {
   max-width: 220px;
-  gap: 60px;
+  gap: 20px;
   line-height: 20px; }
 
 .row {
@@ -178,5 +178,4 @@ button {
 
 .item {
   min-height: 160px;
-  justify-content: start;
   gap: 20px; }

@@ -244,6 +244,8 @@ for (el of data) {
     chip_img.src = el.specs.chip.title.includes("M1") ? "./img/m1.png" : "./img/intel.png"
     chip_title.innerHTML = el.specs.chip.title
     chip_descr.innerHTML = el.specs.chip.description
+    chip.style.justifyContent = "start"
+
 
     ram.classList.add("item")
     ram.classList.add("row")
@@ -251,27 +253,30 @@ for (el of data) {
     ram_img.src = el.specs.ram.title.includes("16GB") ? "./img/memory.png" : "./img/memory2.png"
     ram_title.innerHTML = el.specs.ram.title
     ram_descr.innerHTML = el.specs.ram.description
-
+    ram.style.justifyContent = "start"
+    
     memory.classList.add("item")
     memory.classList.add("row")
-
+    
     memory_title.innerHTML = el.specs.memory.size + el.specs.memory.type.toUpperCase()
     memory_descr.innerHTML = el.specs.memory.description
     memory_title.style.fontWeight = `600`
     memory_title.style.fontSize = `26px`
-
+    memory.style.justifyContent = "start"
+    
     battery.classList.add("item")
     battery.classList.add("row")
-
+    
     battery_img.src = "./img/battery.png"
     battery_title.innerHTML = `Up to ${el.specs.battery} hours battery life`
-
+    
     camera.classList.add("item")
     camera.classList.add("row")
-
+    
     camera_img.src = "./img/video.png"
     camera_title.innerHTML = el.specs.camera.title
     camera_descr.innerHTML = el.specs.camera.description
+    camera.style.justifyContent = "start"
 
     weight.classList.add("item")
     weight.classList.add("row")
