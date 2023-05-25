@@ -1,0 +1,200 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=No75to+Sans+KR:wght@100;300;400;500;700;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/*���������*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: "Montserrat";
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/*--------------------*/
+
+.wrapper {
+    width: 90%;
+    margin: 30px 0;
+    display: flex;
+    gap: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    max-width: 220px;
+    gap: 60px;
+    line-height: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top {
+    gap: 40px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.203);
+    padding-bottom: 30px;
+}
+
+.link {
+    border-top: 2px solid rgba(0, 0, 0, 0.203);
+    width: 100%;
+    padding: 20px 0;
+}
+
+.first {
+    width: 276px;
+    height: 167px;
+    background-image: url("../../img/macbookair.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    transition: .5s ease;
+}
+
+.second {
+    gap: 20px;
+    text-align: center;
+
+    h3 {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .price {
+        font-weight: 600;
+        color: gray;
+    }
+}
+
+button {
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    transition: .3s ease;
+
+    &:hover {
+        opacity: .5;
+    }
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.silver {
+    background-color: #cfcfcf;
+}
+
+.gray {
+    background-color: rgb(157, 157, 157);
+}
+
+.gold {
+    background-color: rgb(221, 192, 122);
+}
+
+.buy {
+    background-color: royalblue;
+    color: white;
+    width: 45px;
+    font-size: 12px;
+
+}
+
+.main {
+    text-align: center;
+    gap: 40px;
+}
+
+.item {
+    gap: 10px;
+}
