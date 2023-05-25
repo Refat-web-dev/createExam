@@ -20,7 +20,8 @@ const data = [
             },
             memory: {
                 size: 2,
-                type: 'tb'
+                type: 'tb',
+                description: 'Maximum configurable storage'
             },
             battery: 18,
             camera: {
@@ -54,7 +55,8 @@ const data = [
             },
             memory: {
                 size: 2,
-                type: 'tb'
+                type: 'tb',
+                description: 'Maximum configurable storage'
             },
             battery: 20,
             camera: {
@@ -90,7 +92,8 @@ const data = [
             },
             memory: {
                 size: 8,
-                type: 'tb'
+                type: 'tb',
+                description: ""
             },
             battery: 11,
             camera: {
@@ -111,8 +114,9 @@ let wrapper = document.querySelector(".wrapper")
 
 for (el of data) {
     let column = document.createElement("div")
+
     let top = document.createElement("div")
-    let first = document.createElement("diм")
+    let first = document.createElement("div")
     // let firstImg = document.createElement("img")
     let second = document.createElement("div")
     let second_h3 = document.createElement("h3")
@@ -129,7 +133,6 @@ for (el of data) {
         btn.style.background = item
         btn.dataset.color = item
         btns.append(btn)
-        console.log(btn);
         let key = btn.getAttribute("data-color")
         btn.onclick = () => {
             first.style.backgroundImage = `url(${images[key]})`
@@ -145,7 +148,7 @@ for (el of data) {
     first.classList.add("first")
     btns.classList.add("btns")
 
-    first.style.backgroundImage = `url("./img/${el.img}~")`
+    first.style.backgroundImage = `url("./img/${el.img}")`
 
     second.classList.add("second")
     second.classList.add("row")
@@ -158,12 +161,176 @@ for (el of data) {
     second_span.innerHTML = el.price
     second_a.href = el.url
 
-    column.append(top)
+    let main = document.createElement("div")
+
+    let display = document.createElement("div")
+    let display_title = document.createElement("p")
+    let display_span = document.createElement("span")
+    let display_descr = document.createElement("p")
+
+    let chip = document.createElement("div")
+    let chip_img = document.createElement("img")
+    let chip_title = document.createElement("p")
+    let chip_descr = document.createElement("p")
+
+    let ram = document.createElement("div")
+    let ram_img = document.createElement("img")
+    let ram_title = document.createElement("p")
+    let ram_descr = document.createElement("p")
+
+    let memory = document.createElement("div")
+    let memory_title = document.createElement("p")
+    let memory_descr = document.createElement("p")
+
+    let battery = document.createElement("div")
+    let battery_img = document.createElement("img")
+    let battery_title = document.createElement("p")
+
+    let camera = document.createElement("div")
+    let camera_img = document.createElement("img")
+    let camera_title = document.createElement("p")
+    let camera_descr = document.createElement("p")
+
+    let weight = document.createElement("div")
+    let weight_title = document.createElement("p")
+    let weight_descr = document.createElement("p")
+
+    let other = document.createElement("div")
+    let other_icons = document.createElement("div")
+    let other_title = document.createElement("p")
+    let icons = {
+        'Touch Bar': "./img/icons/brightness.svg",
+        'Sound': "./img/icons/volume.svg",
+        'Touch ID': "./img/icons/touch_id.svg"
+    }
+
+    for (let icon of el.specs.other) {
+        other_title.dataset.icon = el.specs.other[el.specs.other.indexOf(icon)]
+
+        let key = other_title.getAttribute("data-icon")
+        let other_img = document.createElement("img")
+        other_img.src = icons[key]
+
+        other_icons.append(other_img)
+
+        other_img.style.width = "48px"
+        other_img.style.height = "44px"
+        if (el.specs.other.length !== 1) {
+            other_img.classList.add("patterns")
+
+            console.log(el.specs.other.length);
+        }
+
+    }
+    let link = document.createElement("div")
+    let more = document.createElement("a")
+
+    main.classList.add("main")
+    main.classList.add("row")
+
+    display.classList.add("display")
+    display.classList.add("item")
+    display.classList.add("row")
+    other_icons.classList.add("icons")
+
+    display_title.innerHTML = `"`
+    display_title.style.fontWeight = `600`
+    display_title.style.fontSize = `26px`
+    display_span.innerHTML = el.specs.display.size
+    display_descr.innerHTML = el.specs.display.title
+
+    chip.classList.add("chip")
+    chip.classList.add("item")
+    chip.classList.add("row")
+
+    chip_img.src = el.specs.chip.title.includes("M1") ? "./img/m1.png" : "./img/intel.png"
+    chip_title.innerHTML = el.specs.chip.title
+    chip_descr.innerHTML = el.specs.chip.description
+
+    ram.classList.add("ram")
+    ram.classList.add("item")
+    ram.classList.add("row")
+
+    ram_img.src = el.specs.ram.title.includes("16GB") ? "./img/memory.png" : "./img/memory2.png"
+    ram_title.innerHTML = el.specs.ram.title
+    ram_descr.innerHTML = el.specs.ram.description
+
+    memory.classList.add("memory")
+    memory.classList.add("item")
+    memory.classList.add("row")
+
+    memory_title.innerHTML = el.specs.memory.size + el.specs.memory.type.toUpperCase()
+    memory_descr.innerHTML = el.specs.memory.description
+    memory_title.style.fontWeight = `600`
+    memory_title.style.fontSize = `26px`
+
+    battery.classList.add("battery")
+    battery.classList.add("item")
+    battery.classList.add("row")
+
+    battery_img.src = "./img/battery.png"
+    battery_title.innerHTML = `Up to ${el.specs.battery} hours battery life`
+
+    camera.classList.add("camera")
+    camera.classList.add("item")
+    camera.classList.add("row")
+
+    camera_img.src = "./img/video.png"
+    camera_title.innerHTML = el.specs.camera.title
+    camera_descr.innerHTML = el.specs.camera.description
+
+    weight.classList.add("weight")
+    weight.classList.add("item")
+    weight.classList.add("row")
+
+    weight_title.innerHTML = el.specs.weight + 'Ib.'
+    weight_descr.innerHTML = "Weight"
+
+    weight_title.style.fontWeight = `600`
+    weight_title.style.fontSize = `26px`
+
+
+    other.classList.add("other")
+    other.classList.add("item")
+    other.classList.add("row")
+
+    other_title.innerHTML = el.specs.other.length === 1 ? el.specs.other[0] : el.specs.other[0] + " and " + el.specs.other[2]
+
+
+    link.classList.add("link")
+    more.innerHTML = "Learn more >"
+    more.href = "#"
+
+    column.append(top, main)
     top.append(first, second)
     // first.append(firstImg)
     second.append(second_h3, second_p, btns, second_a)
     second_p.append(second_span)
     second_a.append(buy)
+
+    main.append(display, chip, ram, memory, battery, camera, weight, other, link)
+
+    display.append(display_title, display_descr)
+    display_title.prepend(display_span)
+
+    chip.append(chip_img, chip_title, chip_descr)
+
+    ram.append(ram_img, ram_title, ram_descr)
+
+    chip.append(chip_img, chip_title, chip_descr)
+
+    memory.append(memory_title, memory_descr)
+
+    battery.append(battery_img, battery_title)
+
+    camera.append(camera_img, camera_title, camera_descr)
+
+    weight.append(weight_title, weight_descr)
+
+    other.append(other_icons, other_title)
+
+    link.append(more)
+
 
     wrapper.append(column)
 

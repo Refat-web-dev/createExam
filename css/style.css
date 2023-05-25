@@ -82,7 +82,7 @@ h6 {
   margin: 30px 0;
   display: flex;
   gap: 150px;
-  align-items: center;
+  align-items: start;
   justify-content: center; }
 
 .column {
@@ -105,6 +105,12 @@ h6 {
   border-top: 2px solid rgba(0, 0, 0, 0.203);
   width: 100%;
   padding: 20px 0; }
+  .link a {
+    font-weight: 500;
+    color: royalblue;
+    transition: .3s ease; }
+    .link a:hover {
+      opacity: .5; }
 
 .first {
   width: 276px;
@@ -114,6 +120,19 @@ h6 {
   background-position: left center;
   background-size: contain;
   transition: .5s ease; }
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; }
+
+.patterns {
+  padding: 0px 15px;
+  display: block;
+  width: 60px !important;
+  border: 2px solid black;
+  border-radius: 10px; }
 
 .second {
   gap: 20px;
@@ -155,7 +174,9 @@ button {
 
 .main {
   text-align: center;
-  gap: 40px; }
+  gap: 20px; }
 
 .item {
-  gap: 10px; }
+  justify-content: start;
+  min-height: 180px;
+  gap: 20px; }
