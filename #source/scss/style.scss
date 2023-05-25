@@ -105,7 +105,7 @@ h6 {
 
 .column {
     max-width: 220px;
-    gap: 20px;
+    gap: 60px;
     line-height: 20px;
 }
 
@@ -219,10 +219,11 @@ button {
 
 .main {
     text-align: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 .item {
-    min-height: 180px;
+    min-height: 160px;
+    justify-content: start;
     gap: 20px;
 }
